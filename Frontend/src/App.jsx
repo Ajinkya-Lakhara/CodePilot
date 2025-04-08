@@ -21,13 +21,13 @@ function App() {
   }, [code])
 
   const reviewCode = async () => {
-    const response = await axios.post('http://localhost:3000/ai/get-review', { code })
+    const response = await axios.post('https://codepilot-x1f9.onrender.com/ai/get-review', { code })
     setReview(response.data)
   }
 
   const runCode = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/run-code', {
+      const response = await axios.post('https://codepilot-x1f9.onrender.com/api/run-code', {
         languageId,
         code,
         input
